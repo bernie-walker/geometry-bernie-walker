@@ -18,9 +18,7 @@ class Point {
 
   findDistanceTo(otherPoint) {
     if (!(otherPoint instanceof Point)) return null;
-    const diffInX = this.x - otherPoint.x;
-    const diffInY = this.y - otherPoint.y;
-    return Math.sqrt(diffInX ** 2 + diffInY ** 2);
+    return Math.hypot(this.x - otherPoint.x, this.y - otherPoint.y);
   }
 
   isEqualTo(otherObject) {
