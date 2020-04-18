@@ -1,4 +1,4 @@
-const Point = require("./point");
+const Point = require('./point');
 
 class Circle {
   constructor(point, radius) {
