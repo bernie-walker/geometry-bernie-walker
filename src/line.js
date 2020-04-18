@@ -1,17 +1,17 @@
-const Point = require("./point");
+const Point = require('./point');
 
-const getCoordinates = function(line, m, n) {
+const getCoordinates = function (line, m, n) {
   const sumOfRatios = m + n;
   const x = (m * line.endB.x + n * line.endA.x) / sumOfRatios;
   const y = (m * line.endB.y + n * line.endA.y) / sumOfRatios;
   return { x, y };
 };
 
-const isVertical = function(slope) {
+const isVertical = function (slope) {
   return slope == Infinity || slope == -Infinity;
 };
 
-const isCoordinateInsideSegment = function(coordinate, limit1, limit2) {
+const isCoordinateInsideSegment = function (coordinate, limit1, limit2) {
   const min = Math.min(limit1, limit2);
   const max = Math.max(limit1, limit2);
 
@@ -31,7 +31,7 @@ class Line {
   split() {
     const midPoint = {
       x: (this.endA.x + this.endB.x) / 2,
-      y: (this.endA.y + this.endB.y) / 2
+      y: (this.endA.y + this.endB.y) / 2,
     };
 
     return [new Line(this.endA, midPoint), new Line(midPoint, this.endB)];
